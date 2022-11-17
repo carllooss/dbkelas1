@@ -30,4 +30,4 @@ $motor->gambar = $fileName;
 $motor->insert();
 
 #4. Redirect ke halaman list motor
-header('Location: index.php');
+header('Location: ../../index.php?page=list-motor');

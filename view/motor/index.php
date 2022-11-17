@@ -4,21 +4,8 @@ include_once __DIR__ . '../../../Model/Motor.php';
 
 $listMotor = Motor::getAll();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motor</title>
-</head>
-
-<body>
     <h3>List Data Motor</h3>
-    <a href="./formTambah.php">Tambah Motor</a>
-    <table width='100%' border='1'>
+    <table class="table table-stripped">
         <thead>
             <tr>
                 <th>No</th>
@@ -37,7 +24,7 @@ $listMotor = Motor::getAll();
                 <tr>
                     <td><?= $nomor++ ?></td>
                     <td>
-                        <img src="/DBKELAS1/images/<?=$motor->gambar ?>" height="75px" alt="">
+                        <img class="image-thumbanail" src="/DBKELAS1/images/<?=$motor->gambar ?>" height="75px" alt="">
                     </td>
                     <td><?= $motor->platNo ?></td>
                     <td><?= $motor->merek ?></td>
@@ -47,8 +34,8 @@ $listMotor = Motor::getAll();
                         <?= $motor->mahasiswa->nim ?>
                     </td>
                     <td>
-                        <a href="./formUbah.php?plat_no=<?= $motor->platNo ?>">Edit</a>
-                        <a href="./konfirmasiHapus.php?id=<?= $motor->id ?>">Delete</a>
+                        <a class="btn btn-warning btn-sm" href="index.php?page=update-motor&plat_no=<?= $motor->platNo ?>">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="index.php?page=delete-motor&id=<?= $motor->id ?>">Delete</a>
                     </td>
                 </tr>
             <?php endforeach ?>

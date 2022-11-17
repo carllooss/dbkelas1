@@ -5,33 +5,37 @@ $listMahasiswa = Mahasiswa::getAll();
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h3>Tambah Motor Mahasiswa</h3>
-    <form action="prosesTambah.php" method="POST" enctype="multipart/form-data">
-        <p>
-            Pilih Mahasiswa <br>
-            <select name="mahasiswaNim" id="">
-                <option value="" disabled selected>Pilih Mahasiswa</option>
-                <?php
-                foreach ($listMahasiswa as $mhs) {
-                    echo "<option value='$mhs->nim'>$mhs->nim / $mhs->nama</option>";
-                }
-                ?>
-            </select>
-        </p>
-        <p>Plat No : <br> <input type="text" name="platNo" required /> </p>
-        <p>Merek : <br> <input type="text" name="merek" required /> </p>
-        <p>Tipe : <br> <input type="text" name="tipe" required /> </p>
-        <p>Gambar <br> <input type="file" name="gambar" alt="" /> </p>
-        <button type="submit">Simpan</button>
-    </form>
+<h3>Tambah Motor Mahasiswa</h3>
+<form action="view/motor/prosesTambah.php" method="POST" enctype="multipart/form-data">
+<div class="form-group">
+        <label for="">Pilih Mahasiswa</label> <br>
+        <select class="form-control" name="mahasiswaNim" id="">
+            <option value="" disabled selected>Pilih Mahasiswa</option>
+            <?php
+            foreach ($listMahasiswa as $mhs) {
+                echo "<option value='$mhs->nim'>$mhs->nim / $mhs->nama</option>";
+            }
+            ?>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="">Plat No : </label>
+        <input required class="form-control" type="text" name="platNo" required />
+    </div>
+    <div class="form-group">
+        <label for="">Merek : </label>
+        <input required class="form-control" type="text" name="merek" required />
+    </div>
+    <div class="form-group">
+        <label for="">Tipe : </label>
+        <input required class="form-control" type="text" name="tipe" required />
+    </div>
+    <div class="form-group">
+        <label for="">Gambar : </label> <br>
+        <input required type="file" name="gambar" alt="" />
+    </div>
+    <button class="btn btn-primary" type="submit">Simpan</button>
+</form>
 </body>
 
 </html>

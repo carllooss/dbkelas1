@@ -26,7 +26,7 @@ if ($mhs === null) {
     <p>Jenis Kelamin : <?= $mhs->jenis_kelamin ?></p>
     <p>Alamat : <?= $mhs->alamat ?></p>
     <a href="./index.php">batal</a>
-    <a href="./prosesHapus.php?nim=<?= $mhs->nim ?>">Hapus</a>
+    <a href="view/mahasiswa/prosesHapus.php?nim=<?= $mhs->nim ?>">Hapus</a>
 </body>
 
 </html>

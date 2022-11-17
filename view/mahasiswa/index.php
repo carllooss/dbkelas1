@@ -6,8 +6,7 @@ include_once __DIR__ . '../../../Model/Motor.php';
 $listMahasiswa = Mahasiswa::getAll();
 ?>
     <h3>List Data Mahasiswa</h3>
-    <a href="./formTambah.php">Tambah Mahasiswa</a>
-    <table class="table table-striped">
+    <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th>No</th>
@@ -42,8 +41,8 @@ $listMahasiswa = Mahasiswa::getAll();
                         </ol>
                     </td>
                     <td>
-                        <a href="./formUbah.php?nim=<?= $mhs->nim ?>">Edit</a>
-                        <a href="./konfirmasiHapus.php?nim=<?= $mhs->nim ?>">Delete</a>
+                        <a class="btn btn-warning btn-sm" href="index.php?page=update-mhs&nim=<?= $mhs->nim ?>">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="index.php?page=delete-mhs&nim=<?= $mhs->nim ?>">Delete</a>
                     </td>
                 </tr>
             <?php

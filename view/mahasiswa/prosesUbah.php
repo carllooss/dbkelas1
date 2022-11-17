@@ -7,7 +7,7 @@ $mhs = Mahasiswa::getByPrimaryKey($nim);
 
 if ($mhs === null) {
     echo "<h2>Data Mahasiswa Tidak Di Temukan</h2>";
-    echo "<a href='index.php'>Klik Link Ini Untuk Kembali</a>";
+    echo "<a href='index.php?page=list-mhs'>Klik Link Ini Untuk Kembali</a>";
     die();
 } else {
 
@@ -22,5 +22,5 @@ if ($mhs === null) {
     $mhs->jenis_kelamin = $jenis_kelamin;
 
     $mhs->update();
-    header('Location: index.php');
+    header('Location: ../../index.php?page=list-mhs');
 }

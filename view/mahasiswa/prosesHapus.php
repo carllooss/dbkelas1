@@ -11,5 +11,5 @@ if ($mhs === null) {
     die();
 } else {
     $mhs->delete();
-    header('Location: index.php');
+    header('Location: ../../index.php?page=list-mhs');
 }

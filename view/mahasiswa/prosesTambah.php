@@ -16,11 +16,7 @@ $mhs->alamat = $alamat;
 $mhs->tgl_lahir = $tgl_lahir;
 $mhs->jenis_kelamin = $jenis_kelamin;
 
-$res = $mhs->insert();
+$mhs->insert();
 
-if ($res) {
-    header('Location: ./index.php');
-    exit();
-} else {
-    dd("ERROR");
-}
+header('Location: ../../index.php?page=list-mhs');
+die();

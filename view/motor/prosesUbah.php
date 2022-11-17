@@ -6,7 +6,7 @@ include_once __DIR__ . '../../../Model/Mahasiswa.php';
 $id = $_REQUEST["id"];
 if (empty(Motor::getBy($id, "id"))) {
     echo "<h2>Data Motor Tidak Di Temukan</h2>";
-    echo "<a href='index.php'>Klik Link Ini Untuk Kembali</a>";
+    echo "<a href='view/motor/index.php'>Klik Link Ini Untuk Kembali</a>";
     die();
 }
 
@@ -15,7 +15,7 @@ $platNo = $_REQUEST['plat_no'];
 $prevPlatNo = $_REQUEST['previous_plat_no'];
 if ($platNo !== $prevPlatNo && !empty(Motor::getBy($platNo))) {
     echo "<h2>Plat sudah ada</h2>";
-    echo "<a href='index.php'>Klik Link Ini Untuk Kembali</a>";
+    echo "<a href='view/motor/index.php'>Klik Link Ini Untuk Kembali</a>";
     die();
 }
 
@@ -33,7 +33,7 @@ $motor->mahasiswaNIM = $mahasiswaNIM;
 $res = $motor->update();
 
 if ($res) {
-    header('Location: ./index.php');
+    header('Location: ../../index.php?page=list-motor');
     exit();
 } else {
     die();

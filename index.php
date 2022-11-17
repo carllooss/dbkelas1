@@ -14,7 +14,9 @@
 
 <body>
     <div class="container">
+        <div class="row mb-5"></div>
         <div class="row">
+
             <div class="col-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -33,7 +35,7 @@
             </div>
             <div class="col-9">
                 <?php
-                $halaman = "view/mahasiswa/index.php";
+                $halaman = "view/home.php";
                 if (isset($_REQUEST['page'])) {
                     $page = $_REQUEST['page'];
                     switch ($page) {
@@ -48,6 +50,18 @@
                             break;
                         case "add-motor":
                             $halaman = "view/motor/formTambah.php";
+                            break;
+                        case "update-motor":
+                            $halaman = "view/motor/formUbah.php";
+                            break;
+                        case "delete-motor":
+                            $halaman = "view/motor/konfirmasiHapus.php";
+                            break;
+                        case "update-mhs":
+                            $halaman = "view/mahasiswa/formUbah.php";
+                            break;
+                        case "delete-mhs":
+                            $halaman = "view/mahasiswa/konfirmasiHapus.php";
                             break;
                     }
                 }

@@ -10,28 +10,33 @@ if ($mhs === null) {
     die();
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <title>Ubah Mahasiswa</title>
-</head>
+<h2>Ubah Mahasiswa</h2>
+<form method="POST" action="view/mahasiswa/prosesUbah.php">
+    <div class="form-group">
+        <label for="">Nim</label>
+        <input required class="form-control" value="<?= $mhs->nim ?>" type="text" name="nim" />
+    </div>
+    <div class="form-group">
+        <label for="">Nama</label>
+        <input required class="form-control" value="<?= $mhs->nama ?>" type="text" name="nama" />
+    </div>
+    <div class="form-group">
+        <label for="">Tanggal Lahir</label>
+        <input required class="form-control" value="<?= $mhs->tgl_lahir ?>" type="date" name="tgl_lahir" />
+    </div>
+    <div class="form-group">
+        <label for="">Alamat</label>
+        <input required class="form-control" value="<?= $mhs->alamat ?>" type="text" name="alamat" />
+    </div>
+    <div class="form-group">
+        <label for="">Jenis Kelamin</label> <br>
+        <input required <?= $mhs->jenis_kelamin == 'L' ? 'checked' : ""  ?> type="radio" name="jenis_kelamin" value="L">Laki Laki
+        <input required <?= $mhs->jenis_kelamin == 'P' ? 'checked' : "" ?> type="radio" name="jenis_kelamin" value="P">Perempuan
+    </div>
 
-<body>
-    <h2>Ubah Mahasiswa</h2>
-    <form method="POST" action="./prosesUbah.php">
-
-        <p>Nim <br> <input required value="<?= $mhs->nim ?>" type="text" name="nim"></p>
-        <p>Nama <br> <input required value="<?= $mhs->nama ?>" type="text" name="nama"></p>
-        <p>Tanggal Lahir<br> <input required value="<?= $mhs->tgl_lahir ?>" type="date" name="tgl_lahir"></p>
-        <p>Alamat <br> <input required value="<?= $mhs->alamat ?>" type="text" name="alamat"></p>
-        <p>Jenis Kelamin <br>
-            <input required <?= $mhs->jenis_kelamin == 'L' ? 'checked' : ""  ?> type="radio" name="jenis_kelamin" value="L">Laki Laki
-            <input required <?= $mhs->jenis_kelamin == 'P' ? 'checked' : "" ?> type="radio" name="jenis_kelamin" value="P">Perempuan
-        </p>
-
-        <button type="submit">Simpan</button>
-    </form>
+    <button class="btn btn-primary" type="submit">Simpan</button>
+</form>
 </body>
 
 </html>
