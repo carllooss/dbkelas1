@@ -5,21 +5,9 @@ include_once __DIR__ . '../../../Model/Motor.php';
 
 $listMahasiswa = Mahasiswa::getAll();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahasiswa</title>
-</head>
-
-<body>
     <h3>List Data Mahasiswa</h3>
     <a href="./formTambah.php">Tambah Mahasiswa</a>
-    <table width='100%' border='1'>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>No</th>
